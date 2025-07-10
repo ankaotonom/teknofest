@@ -9,9 +9,9 @@ from nav_msgs.msg import Odometry
 from tf.transformations import euler_from_quaternion
 import math
 
-class AudibotController:
+class AnkaController:
     def __init__(self):
-        rospy.init_node('audibot_topic_controller_with_feedback')
+        rospy.init_node('anka_topic_controller_with_feedback')
 
         # Publishers
         self.steering_pub = rospy.Publisher('/steering_cmd', Float64, queue_size=10)
@@ -164,7 +164,7 @@ class AudibotController:
 
 if __name__ == '__main__':
     try:
-        node = AudibotController()
+        node = Controller()
         node.run()
     except rospy.ROSInterruptException:
         pass
